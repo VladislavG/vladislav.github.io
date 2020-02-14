@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
   <style>
   
   body
@@ -171,23 +170,23 @@
 
 <body>
 
-   <div id="oblako"></div> <!-- Áëîê îáëàêà 1 -->
-   <div id="oblako2"></div> <!-- Áëîê îáëàêà 2 -->
-   <div id="oblako3"></div> <!-- Áëîê îáëàêà 3 -->
+   <div id="oblako"></div> <!-- Блок облака 1 -->
+   <div id="oblako2"></div> <!-- Блок облака 2 -->
+   <div id="oblako3"></div> <!-- Блок облака 3 -->
    <div id="musor"></div>
-   <div id="carwhite"></div> <!-- Áåëàÿ ìàøèíà -->
-   <div id="carred"></div> <!-- Êðàñíàÿ ìàøèíà -->
+   <div id="carwhite"></div> <!-- Белая машина -->
+   <div id="carred"></div> <!-- Красная машина -->
    
   
-  <!-- Áëîê êíîïîê -->
+  <!-- Блок кнопок -->
   <div id="button-block">
   <p id="kmred"></p>
   <p id="kmwhite"></p>
-  <button onclick="fastred();" class="green">Óñêîðèòü êðàñíóþ</button> <!-- Óñêîðèòü êðàñíóþ ìàøèíó -->
-  <button onclick="tormozred()" class="red">Çàìåäëèòü êðàñíóþ</button> <!-- Çàìåäëèòü êðàñíóþ ìàøèíó -->
-  <button onclick="fastwhite()" class="green">Óñêîðèòü áåëóþ</button> <!-- Óñêîðèòü áåëóþ ìàøèíó -->
+  <button onclick="fastred();" class="green">Ускорить красную</button> <!-- Ускорить красную машину -->
+  <button onclick="tormozred()" class="red">Замедлить красную</button> <!-- Замедлить красную машину -->
+  <button onclick="fastwhite()" class="green">Ускорить белую</button> <!-- Ускорить белую машину -->
   
-  <button onclick="tormozwhite()" class="red">Çàìåäëèòü áåëóþ</button> <!-- Çàìåäëèòü êðàñíóþ ìàøèíó -->
+  <button onclick="tormozwhite()" class="red">Замедлить белую</button> <!-- Замедлить красную машину -->
   </div>
   
 
@@ -216,12 +215,12 @@
        function gocar() 
        {
         
-       // Êðàñíàÿ ìàøèíà
+       // Красная машина
        if(speed <= 0)
        {
        speed = 0;
        }
-       if(speed >= 26) // Ìàêñèìàëüíàÿ ñêîðîñòü 20 * 10
+       if(speed >= 26) // Максимальная скорость 20 * 10
        {
        speed = 26;
        }
@@ -230,7 +229,7 @@
        
        
        document.getElementById("carred").style.left = num +"px";
-       kmred.innerHTML = speed * 10 + " êì/÷";
+       kmred.innerHTML = speed * 10 + " км/ч";
        if(sum >= 2400)
        {
        document.getElementById("carred").style.left = "-400";
@@ -240,19 +239,19 @@
        
        
        
-       // Áåëàÿ ìàøèíà
+       // Белая машина
        if(speeds <= 0)
        {
        speeds = 0;
        }
-       if(speeds >= 17) // Ìàêñèìàëüíàÿ ñêîðîñòü 20 * 10
+       if(speeds >= 17) // Максимальная скорость 20 * 10
        {
        speeds = 17;
        }
        sums = nums + speeds;
        nums = sums;
        document.getElementById("carwhite").style.right = nums +"px";
-       kmwhite.innerHTML = speeds * 10 + " êì/÷";
+       kmwhite.innerHTML = speeds * 10 + " км/ч";
        
        if(sums >= 2600)
        {
