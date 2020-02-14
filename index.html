@@ -1,34 +1,385 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE HTML>
+<html>
 
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+  
+  body
+  {
+    overflow-x:hidden;
+    background:url("bodybg.jpg") center top;
+    background-size:auto;
+  }
+  
+  #oblako
+  {
+    display:inline-block;
+    position:relative;
+    widtH:100px;
+    height:100px;
+    top:-30px;
+    
+    margin-left:-160px;
+    background:url("oblako.png") left top;
+    background-size:cover;
+  }
+  
+  #oblako2
+  {
+    display:inline-block;
+    position:relative;
+    widtH:100px;
+    height:100px;
+    top:-37px;
+    margin-left:-200px;
+    background:url("oblako.png") left top;
+    background-size:cover;
+  }
+  
+  #oblako3
+  {
+    display:inline-block;
+    position:relative;
+    widtH:100px;
+    height:100px;
+    top:-30px;
+    margin-left:-150px;
+    background:url("oblako.png") left top;
+    background-size:cover;
+  }
+  
+  
+  #carred{
+    position: relative;
+    width:400px;
+    height:130px;
+    display:block;
+    float:left;
+    margin-left:-400px;
+    margin-top:330px;
+    background:url("car.png") no-repeat;
+    background-size:contain;
+   
+    
+  }
+  
+    #carwhite{
+    position: relative;
+    width:350px;
+    height:130px;
+    display:block;
+    float:right;
+    margin-right:-400px;
+    margin-top:260px;
+    background:url("car2.png") no-repeat;
+    background-size:contain;
+  }
+  
+  #musor
+  {
+    display:block;
+    position:absolute;
+    width:30px;
+    height:30px;
+    background:url("musor.png");
+    background-size:contain;
+    left:0px;
+    top:310px;
+    
+    animation-name: rotation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
 
-	<title>BookAuto - РґРЅРµРІРЅРёРє Р°РІС‚РѕРјРѕР±РёР»РёСЃС‚Р°</title>
+
+@keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+ 
+    #button-block
+    {
+        display:block;
+        width:1300px;
+        height:100px;
+        margin: 370px auto;
+        
+    }
+    
+    #kmred
+    {
+        display:inline-block;
+        width:580px;
+        height:10px;
+        text-align:center;
+        font:18px arial;
+        color:white;
+    }
+    
+    #kmwhite
+    {
+        display:inline-block;
+        width:580px;
+        height:10px;
+        text-align:center;
+        font:18px arial;
+        color:white;
+    }
+    
+    #button-block .green
+    {
+        display:inline-block;
+        width:250px;
+        height:75px;
+        background:#28a745;
+        clear:both;
+        margin:15px;
+        padding:10px;
+        border:none;
+        font:16px arial;
+        color:#fff;
+        border-radius:5px;
+        cursor: pointer;
+    }
+    
+        #button-block .red
+    {
+        display:inline-block;
+        width:250px;
+        height:75px;
+        background:#d71e26;
+        clear:both;
+        margin:15px;
+        padding:10px;
+        border:none;
+        font:16px arial;
+        color:#fff;
+        border-radius:5px;
+        cursor: pointer;
+    }
+    
+  </style>
 </head>
+
+
 
 <body>
 
-<header>
+   <div id="oblako"></div> <!-- Блок облака 1 -->
+   <div id="oblako2"></div> <!-- Блок облака 2 -->
+   <div id="oblako3"></div> <!-- Блок облака 3 -->
+   <div id="musor"></div>
+   <div id="carwhite"></div> <!-- Белая машина -->
+   <div id="carred"></div> <!-- Красная машина -->
+   
+  
+  <!-- Блок кнопок -->
+  <div id="button-block">
+  <p id="kmred"></p>
+  <p id="kmwhite"></p>
+  <button onclick="fastred();" class="green">Ускорить красную</button> <!-- Ускорить красную машину -->
+  <button onclick="tormozred()" class="red">Замедлить красную</button> <!-- Замедлить красную машину -->
+  <button onclick="fastwhite()" class="green">Ускорить белую</button> <!-- Ускорить белую машину -->
+  
+  <button onclick="tormozwhite()" class="red">Замедлить белую</button> <!-- Замедлить красную машину -->
+  </div>
+  
 
-<h1>РЎРµСЂРІРёСЃ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РѕРЅР»Р°Р№РЅ РґРЅРµРІРЅРёРєР° РїРѕ С‚РµС…РЅРёС‡РµСЃРєРѕРјСѓ РѕР±СЃР»СѓР¶РёРІР°РЅРёСЋ Р°РІС‚РѕРјРѕР±РёР»СЏ</h1>
-<p>
-РќР°С€ СЃРµСЂРІРёСЃ РїРѕРјРѕРіР°РµС‚ РІРµСЃС‚Рё СѓС‡РµС‚ СЂР°СЃС…РѕРґР° С‚РѕРїР»РёРІР°, СЂР°СЃС…РѕРґР° РґРµРЅРµР¶РЅС‹С… СЃСЂРµРґСЃС‚РІ РЅР° С‚РµС…РЅРёС‡РµСЃРєРѕРµ РѕР±СЃР»СѓР¶РёРІР°РЅРёРµ Рё СЂРµРјРѕРЅС‚ Р°РІС‚РѕРјРѕР±РёР»СЏ Р·Р° РІРµСЃСЊ РїРµСЂРёРѕРґ РІР»Р°РґРµРЅРёСЏ РёРј. 
-РЈР·РЅР°Р№С‚Рµ СЃРєРѕР»СЊРєРѕ Р’С‹ РїРѕС‚СЂР°С‚РёР»Рё РґРµРЅРµРі РЅР° СЃРѕРґРµСЂР¶Р°РЅРёРµ Р’Р°С€РµРіРѕ Р°РІС‚РѕРјРѕР±РёР»СЏ. РџСЂРё РїСЂРѕРґР°Р¶Рµ Р°РІС‚РѕРјРѕР±РёР»СЏ Р’С‹ СЃРјРѕР¶РµС‚Рµ РїРѕРєР°Р·Р°С‚СЊ Р’Р°С€ РґРЅРµРІРЅРёРє РІ РґРѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІРѕ СЃРІРѕРµРІСЂРµРјРµРЅРЅРѕРіРѕ РѕР±СЃР»СѓР¶РёРІР°РЅРёСЏ.
-</p>
 
-<div class="button-block">
-<a href="lib/login.php" class="log-button">Р’РѕР№С‚Рё РІ РґРЅРµРІРЅРёРє</a>
-<a href="" class="reg-button">Р—Р°РІРµСЃС‚Рё РґРЅРµРІРЅРёРє</a>
-</div>
+  
 
 
-</header>
+  <script>
+  
+       var num = 0;
+       var sum;
+       var lef = 0;
+       
+       var nums = 0;
+       var sums;
+       var lefs = 0;
+       var speed = 3;
+       var speeds = 1;
+       
+       var b = setInterval(gocar, 1);
+       var bb = setInterval(oblako, 15);
+       var bbb = setInterval(musor, 1);
+       
+       
+  
+       function gocar() 
+       {
+        
+       // Красная машина
+       if(speed <= 0)
+       {
+       speed = 0;
+       }
+       if(speed >= 26) // Максимальная скорость 20 * 10
+       {
+       speed = 26;
+       }
+       sum = num  + speed;
+       num = sum;
+       
+       
+       document.getElementById("carred").style.left = num +"px";
+       kmred.innerHTML = speed * 10 + " км/ч";
+       if(sum >= 2400)
+       {
+       document.getElementById("carred").style.left = "-400";
+       num = 0;
+       lef = 0;
+       }
+       
+       
+       
+       // Белая машина
+       if(speeds <= 0)
+       {
+       speeds = 0;
+       }
+       if(speeds >= 17) // Максимальная скорость 20 * 10
+       {
+       speeds = 17;
+       }
+       sums = nums + speeds;
+       nums = sums;
+       document.getElementById("carwhite").style.right = nums +"px";
+       kmwhite.innerHTML = speeds * 10 + " км/ч";
+       
+       if(sums >= 2600)
+       {
+       document.getElementById("carwhite").style.rigth = "-400";
+       nums = 0;
+       lefs = 0;
+       } 
+    }
+    
+    
+    
+    function fastred()
+    {
+    speed++;
+    }
+    
+    function tormozred()
+    {
+    speed--;
+    }
+    
+    function fastwhite()
+    {
+    speeds++;
+    }
+    
+    function tormozwhite()
+    {
+    speeds--;
+    }
+    
+    
+    
+    var numo = 0;
+    var sumo; 
+    var numoo = 0;
+    var sumoo;
+    var numo2 = 0;
+    var sumo2;
+    
+    function oblako()
+    {
+       sumo = numo + 0.6;
+       numo = sumo;
+       
+       sumoo = numoo + 0.8;
+       numoo = sumoo;
+       
+       sumo2 = numo2 + 1.1;
+       numo2 = sumo2;
+       
+       document.getElementById("oblako").style.left = numo +"px";
+       document.getElementById("oblako2").style.left = numoo +"px";
+       document.getElementById("oblako3").style.left = numo2 +"px";
+      
+      
+       if(sumo >= 2200)
+       {
+       document.getElementById("oblako").style.left = "-190";
+       numo = 0;
+       }
+       
+       
+       if(sumoo >= 2200)
+       {
+       document.getElementById("oblako2").style.left = "-190";
+       numoo = 0;
+       }
+       
+       if(sumo2 >= 2100)
+       {
+       document.getElementById("oblako3").style.left = "-190";
+       numo2 = 0;
+       }
+       
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    var nummus = 0;
+    var summus; 
+    
+    
+    function musor()
+    {
+       summus = nummus + 0.6;
+       nummus = summus;
+       
+       
+       
+       document.getElementById("musor").style.left = numo +"px";
+       
+       if(summus >= 2200)
+       {
+       document.getElementById("musor").style.left = "-190";
+       nummus = 0;
+       }
+       
+       
+       
+    }
 
+  </script>
 
 
 
 </body>
+
 </html>
+
+
+
+
+
