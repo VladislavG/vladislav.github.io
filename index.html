@@ -197,8 +197,11 @@
 </head>
 
 
-
 <body>
+
+
+
+
 <div class="cintent">
    <div id="oblako"></div> <!-- Блок облака 1 -->
    <div id="oblako2"></div> <!-- Блок облака 2 -->
@@ -228,6 +231,13 @@
 
 
   <script>
+  
+      if(screen.width < 1000)
+      {
+        alert('Зайдите с ПК');
+        window.stop();
+      }
+  
   
        var num = 0;
        var sum;
