@@ -2,14 +2,24 @@
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <style>
   
   body
   {
-    overflow-x:hidden;
-    background: #291d1d url("bodybg.jpg") center top no-repeat;
+
+
+    overflow:hidden;
+    background:#291d1d url("bodybg.jpg") center top repeat-x;
     background-size:auto;
+    margin:0 auto;
+  }
+  
+  .content
+  {
+    display:block;
+    max-width:2000px;
+    margin:0 auto;
   }
   
   #oblako
@@ -56,10 +66,11 @@
     height:130px;
     display:block;
     float:left;
-    margin-left:-400px;
+    margin-left:-900px;
     margin-top:330px;
     background:url("car.png") no-repeat;
     background-size:contain;
+    cursor:pointer;
    
     
   }
@@ -74,6 +85,7 @@
     margin-top:260px;
     background:url("car2.png") no-repeat;
     background-size:contain;
+    cursor:pointer;
   }
   
   #musor
@@ -108,7 +120,7 @@
         display:block;
         width:1300px;
         height:100px;
-        margin: 370px auto;
+        margin: 420px auto;
         
     }
     
@@ -164,33 +176,53 @@
         cursor: pointer;
     }
     
+
+    
+    #balance
+    {
+        display:block;
+        text-align:center;
+        font:32px arial;
+        color:#fff;
+        margin-top:0px;
+        background: #463a3a;
+        border-radius:5px;
+        width:600px;
+        margin:auto;
+        padding:8px;
+      
+    }
+    
   </style>
 </head>
 
 
 
 <body>
-
+<div class="cintent">
    <div id="oblako"></div> <!-- Блок облака 1 -->
    <div id="oblako2"></div> <!-- Блок облака 2 -->
    <div id="oblako3"></div> <!-- Блок облака 3 -->
    <div id="musor"></div>
-   <div id="carwhite"></div> <!-- Белая машина -->
-   <div id="carred"></div> <!-- Красная машина -->
+   <div id="carwhite" onclick="whitebal();"></div> <!-- Белая машина -->
+   <div id="carred" onclick="redbal();"></div> <!-- Красная машина -->
    
+  
   
   <!-- Блок кнопок -->
   <div id="button-block">
+   <p id="balance">0 очков</p>
+  
   <p id="kmred"></p>
   <p id="kmwhite"></p>
-  <button onclick="fastred();" class="green">Ускорить красную</button> <!-- Ускорить красную машину -->
+  <button onclick="fastred()" class="green">Ускорить красную</button> <!-- Ускорить красную машину -->
   <button onclick="tormozred()" class="red">Замедлить красную</button> <!-- Замедлить красную машину -->
   <button onclick="fastwhite()" class="green">Ускорить белую</button> <!-- Ускорить белую машину -->
   
   <button onclick="tormozwhite()" class="red">Замедлить белую</button> <!-- Замедлить красную машину -->
   </div>
   
-
+</div>
 
   
 
@@ -231,7 +263,7 @@
        
        document.getElementById("carred").style.left = num +"px";
        kmred.innerHTML = speed * 10 + " км/ч";
-       if(sum >= 2400)
+       if(sum >= screen.width*1.5)
        {
        document.getElementById("carred").style.left = "-400";
        num = 0;
@@ -254,7 +286,7 @@
        document.getElementById("carwhite").style.right = nums +"px";
        kmwhite.innerHTML = speeds * 10 + " км/ч";
        
-       if(sums >= 2600)
+       if(sums >= screen.width*1.5)
        {
        document.getElementById("carwhite").style.rigth = "-400";
        nums = 0;
@@ -309,40 +341,26 @@
        document.getElementById("oblako3").style.left = numo2 +"px";
       
       
-       if(sumo >= 2200)
+       if(sumo >= screen.width*1.4)
        {
        document.getElementById("oblako").style.left = "-190";
        numo = 0;
        }
        
        
-       if(sumoo >= 2200)
+       if(sumoo >= screen.width*1.2)
        {
        document.getElementById("oblako2").style.left = "-190";
        numoo = 0;
        }
        
-       if(sumo2 >= 2100)
+       if(sumo2 >= screen.width*1.3)
        {
        document.getElementById("oblako3").style.left = "-190";
        numo2 = 0;
        }
        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -362,7 +380,7 @@
        
        document.getElementById("musor").style.left = numo +"px";
        
-       if(summus >= 2200)
+       if(summus >= screen.width*1.2)
        {
        document.getElementById("musor").style.left = "-190";
        nummus = 0;
@@ -371,6 +389,58 @@
        
        
     }
+    
+    
+    var balances = 0;
+    
+    function redbal()
+    {
+        if(speed < 5)
+        {
+            var och = 1;
+        }
+        if(speed >= 5)
+        {
+            var och = 5;
+        }
+        if(speed >= 10)
+        {
+            var och = 10;
+        }
+        if(speed >= 15)
+        {
+            var och = 20;
+        }
+        balances = balances + och;    
+        balance.innerHTML = balances + " очков";
+        
+    }
+    
+    function whitebal()
+    {
+        if(speeds < 5)
+        {
+            var och = 1;
+        }
+        if(speeds >= 5)
+        {
+            var och = 5;
+        }
+        if(speeds >= 10)
+        {
+            var och = 10;
+        }
+        if(speeds >= 15)
+        {
+            var och = 20;
+        }
+        balances = balances + och;    
+        balance.innerHTML = balances + " очков";
+        
+    }
+    
+    
+    
 
   </script>
 
