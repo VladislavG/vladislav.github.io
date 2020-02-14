@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
   <style>
   
   body
@@ -170,23 +171,23 @@
 
 <body>
 
-   <div id="oblako"></div> <!-- Блок облака 1 -->
-   <div id="oblako2"></div> <!-- Блок облака 2 -->
-   <div id="oblako3"></div> <!-- Блок облака 3 -->
+   <div id="oblako"></div> <!-- ГЃГ«Г®ГЄ Г®ГЎГ«Г ГЄГ  1 -->
+   <div id="oblako2"></div> <!-- ГЃГ«Г®ГЄ Г®ГЎГ«Г ГЄГ  2 -->
+   <div id="oblako3"></div> <!-- ГЃГ«Г®ГЄ Г®ГЎГ«Г ГЄГ  3 -->
    <div id="musor"></div>
-   <div id="carwhite"></div> <!-- Белая машина -->
-   <div id="carred"></div> <!-- Красная машина -->
+   <div id="carwhite"></div> <!-- ГЃГҐГ«Г Гї Г¬Г ГёГЁГ­Г  -->
+   <div id="carred"></div> <!-- ГЉГ°Г Г±Г­Г Гї Г¬Г ГёГЁГ­Г  -->
    
   
-  <!-- Блок кнопок -->
+  <!-- ГЃГ«Г®ГЄ ГЄГ­Г®ГЇГ®ГЄ -->
   <div id="button-block">
   <p id="kmred"></p>
   <p id="kmwhite"></p>
-  <button onclick="fastred();" class="green">Ускорить красную</button> <!-- Ускорить красную машину -->
-  <button onclick="tormozred()" class="red">Замедлить красную</button> <!-- Замедлить красную машину -->
-  <button onclick="fastwhite()" class="green">Ускорить белую</button> <!-- Ускорить белую машину -->
+  <button onclick="fastred();" class="green">Г“Г±ГЄГ®Г°ГЁГІГј ГЄГ°Г Г±Г­ГіГѕ</button> <!-- Г“Г±ГЄГ®Г°ГЁГІГј ГЄГ°Г Г±Г­ГіГѕ Г¬Г ГёГЁГ­Гі -->
+  <button onclick="tormozred()" class="red">Г‡Г Г¬ГҐГ¤Г«ГЁГІГј ГЄГ°Г Г±Г­ГіГѕ</button> <!-- Г‡Г Г¬ГҐГ¤Г«ГЁГІГј ГЄГ°Г Г±Г­ГіГѕ Г¬Г ГёГЁГ­Гі -->
+  <button onclick="fastwhite()" class="green">Г“Г±ГЄГ®Г°ГЁГІГј ГЎГҐГ«ГіГѕ</button> <!-- Г“Г±ГЄГ®Г°ГЁГІГј ГЎГҐГ«ГіГѕ Г¬Г ГёГЁГ­Гі -->
   
-  <button onclick="tormozwhite()" class="red">Замедлить белую</button> <!-- Замедлить красную машину -->
+  <button onclick="tormozwhite()" class="red">Г‡Г Г¬ГҐГ¤Г«ГЁГІГј ГЎГҐГ«ГіГѕ</button> <!-- Г‡Г Г¬ГҐГ¤Г«ГЁГІГј ГЄГ°Г Г±Г­ГіГѕ Г¬Г ГёГЁГ­Гі -->
   </div>
   
 
@@ -215,12 +216,12 @@
        function gocar() 
        {
         
-       // Красная машина
+       // ГЉГ°Г Г±Г­Г Гї Г¬Г ГёГЁГ­Г 
        if(speed <= 0)
        {
        speed = 0;
        }
-       if(speed >= 26) // Максимальная скорость 20 * 10
+       if(speed >= 26) // ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г Гї Г±ГЄГ®Г°Г®Г±ГІГј 20 * 10
        {
        speed = 26;
        }
@@ -229,7 +230,7 @@
        
        
        document.getElementById("carred").style.left = num +"px";
-       kmred.innerHTML = speed * 10 + " км/ч";
+       kmred.innerHTML = speed * 10 + " ГЄГ¬/Г·";
        if(sum >= 2400)
        {
        document.getElementById("carred").style.left = "-400";
@@ -239,19 +240,19 @@
        
        
        
-       // Белая машина
+       // ГЃГҐГ«Г Гї Г¬Г ГёГЁГ­Г 
        if(speeds <= 0)
        {
        speeds = 0;
        }
-       if(speeds >= 17) // Максимальная скорость 20 * 10
+       if(speeds >= 17) // ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г Гї Г±ГЄГ®Г°Г®Г±ГІГј 20 * 10
        {
        speeds = 17;
        }
        sums = nums + speeds;
        nums = sums;
        document.getElementById("carwhite").style.right = nums +"px";
-       kmwhite.innerHTML = speeds * 10 + " км/ч";
+       kmwhite.innerHTML = speeds * 10 + " ГЄГ¬/Г·";
        
        if(sums >= 2600)
        {
