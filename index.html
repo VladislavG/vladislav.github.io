@@ -18,8 +18,9 @@
   .content
   {
     display:block;
-    max-width:2000px;
+    max-width:100%;
     margin:0 auto;
+    overflow:hidden;
   }
   
   #oblako
@@ -61,6 +62,7 @@
   
   
   #carred{
+    display:block;
     position: relative;
     width:400px;
     height:130px;
@@ -202,7 +204,7 @@
 
 
 
-<div class="cintent">
+<div class="content">
    <div id="oblako"></div> <!-- Блок облака 1 -->
    <div id="oblako2"></div> <!-- Блок облака 2 -->
    <div id="oblako3"></div> <!-- Блок облака 3 -->
@@ -232,7 +234,8 @@
 
   <script>
   
-      if(screen.width < 1000)
+  
+  if(screen.width < 1000)
       {
         alert('Похоже что Вы заходите с мобильного устройства! Для корректной работы зайдите через ПК.');
         window.stop();
