@@ -126,6 +126,22 @@
     cursor:pointer;
   }
   
+  #velos{
+    display:block;
+    position: relative;
+    width:100px;
+    height:100px;
+    display:block;
+    
+    margin-right:-300px;
+    float:right;
+    margin-top:180px;
+    margin-bottom:0;
+    background:url("velo2.png") no-repeat;
+    background-size:cover;
+    cursor:pointer;
+  }
+  
   
   #carred{
     display:block;
@@ -200,7 +216,9 @@
     {
         display:block;
         width:600px;
+        height:300px;
         floaT:left;
+       
     }
     
     .column .title
@@ -272,6 +290,7 @@
    <div id="oblako6"></div> <!-- Блок облака 3 -->
    </div>
    <div id="velo" onmouseenter="helloman();"></div>
+   <div id="velos" onmouseenter="helloman();"></div>
    <div id="musor"></div>
    
    <div id="carwhite" onmouseenter="clacson();"></div> <!-- Белая машина -->
@@ -296,6 +315,8 @@
   </div>
   
   </div>
+  
+ 
   
 </div>
 
@@ -325,7 +346,7 @@
         
        if (event.keyCode == 90)
        {
-       sum = num+5;
+       sum = num+10;
        num = sum;
   
        while(gg < 1)
@@ -339,7 +360,7 @@
        document.getElementById("carred").style.left = num +"px";
        
        
-       if(sum == 850 )
+       if(sum == 900 )
        {
        document.getElementById("carred").style.left = 0;
        document.getElementById("carwhite").style.left = 0;
@@ -359,7 +380,7 @@
    addEventListener("keyup", function(event) {
       if (event.keyCode == 39)
       {
-      sums = nums+5;
+      sums = nums+10;
       nums= sums;
       
       while(ggg < 1)
@@ -373,7 +394,7 @@
       
        document.getElementById("carwhite").style.left = nums +"px";
        
-       if(sums == 850 )
+       if(sums == 900 )
        {
        document.getElementById("carwhite").style.left = 0;
        document.getElementById("carred").style.left = 0;
@@ -394,6 +415,7 @@
        var bb = setInterval(oblako, 60);
        var bbb = setInterval(musor, 30);
        var bbbb = setInterval(velo, 30);
+       var bbbb = setInterval(velos, 30);
        
        
        
@@ -455,7 +477,7 @@
       
      
     
-    var velo = 0;
+      var velo = 0;
       function velo()
       {
         velo = velo+5;
@@ -465,6 +487,21 @@
         {
         document.getElementById("velo").style.right = -100 +"px";    
         velo = 0;
+        }
+        
+      }
+      
+      
+      var velos = 0;
+      function velos()
+      {
+        velos = velos+6;
+        document.getElementById("velos").style.right = velos +"px";
+        
+        if(velos > 2000)
+        {
+        document.getElementById("velos").style.right = -100 +"px";    
+        velos = 0;
         }
         
       }
