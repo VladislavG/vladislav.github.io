@@ -117,7 +117,7 @@
     height:100px;
     display:block;
     
-    margin-right:-400px;
+    margin-right:-450px;
     float:right;
     margin-top:170px;
     margin-bottom:0;
@@ -133,7 +133,7 @@
     height:100px;
     display:block;
     
-    margin-right:-300px;
+    margin-right:-450px;
     float:right;
     margin-top:180px;
     margin-bottom:0;
@@ -291,6 +291,7 @@
    </div>
    <div id="velo" onmouseenter="helloman();"></div>
    <div id="velos" onmouseenter="helloman();"></div>
+   
    <div id="musor"></div>
    
    <div id="carwhite" onmouseenter="clacson();"></div> <!-- Белая машина -->
@@ -325,8 +326,8 @@
   <script>
   
        
-       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    alert('Зайтите с ПК! На мобильных устройствах не работает!');
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  alert('Зайтите с ПК! На мобильных устройствах не работает!');
   } else {}
     
   
@@ -362,6 +363,8 @@
        
        if(sum == 900 )
        {
+       var audio = new Audio('finishlancer.mp3');
+       audio.play();
        document.getElementById("carred").style.left = 0;
        document.getElementById("carwhite").style.left = 0;
        pobedared = pobedared + 1;
@@ -396,6 +399,8 @@
        
        if(sums == 900 )
        {
+       var audio = new Audio('finish.mp3');
+       audio.play();
        document.getElementById("carwhite").style.left = 0;
        document.getElementById("carred").style.left = 0;
        pobedawhite = pobedawhite + 1;
@@ -485,7 +490,7 @@
         
         if(velo > 2000)
         {
-        document.getElementById("velo").style.right = -100 +"px";    
+        document.getElementById("velo").style.right = -250 +"px";    
         velo = 0;
         }
         
@@ -500,7 +505,7 @@
         
         if(velos > 2000)
         {
-        document.getElementById("velos").style.right = -100 +"px";    
+        document.getElementById("velos").style.right = -250 +"px";    
         velos = 0;
         }
         
