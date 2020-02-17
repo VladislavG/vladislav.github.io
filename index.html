@@ -192,7 +192,7 @@
         display:block;
         width:1200px;
         height:100px;
-        margin: 40px auto;
+        margin: 20px auto;
         
     }
     
@@ -207,7 +207,7 @@
     {
         display:block;
         width:200px;
-        margin:20px auto 0;
+        margin:-30px auto 0;
         font:21px arial;
         color:#fff;
         text-align:center;
@@ -247,6 +247,7 @@
         font:21px arial;
         color:#222;
         margin-top:60px;
+        line-height:1.5;
     }
     
    
@@ -281,10 +282,11 @@
   <!-- Блок кнопок -->
   <div id="button-block">
   <div class="upravlenie">
-  Управление: белая машина клавиша Z | серая машина клавиша &#8594;
+  <b>Управление:</b><br /> Кабриолет «Z» <br /> Lancer X «&#8594»;
   </div>
   <div class="column">
   <span class="title">Кабриолет</span>
+  
   <p id="scorewhite">Очков - 0</p>
   </div>
   
@@ -301,14 +303,20 @@
 
   <script>
   
+       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    alert('fhdh');
+  } else {}
+    
+  
        var sum = 0;
        var sums = 0;
        
        var num = 0;
        var nums = 0;
-       
+       var x = 0;
        var pobedawhite = 0;
        var pobedared = 0;
+       var gg = 0;
        
        addEventListener("keyup", function(event) 
        {
@@ -317,6 +325,15 @@
        {
        sum = num+5;
        num = sum;
+  
+       while(gg < 1)
+       {
+       var audio = new Audio('autostart.mp3');
+       audio.play();
+       gg= gg+1;
+
+       }
+       
        document.getElementById("carred").style.left = num +"px";
        
        
@@ -341,6 +358,9 @@
       {
       sums = nums+5;
       nums= sums;
+      
+       
+      
       
        document.getElementById("carwhite").style.left = nums +"px";
        
