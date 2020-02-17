@@ -224,7 +224,7 @@
     .column .title
     {
         display:block;
-        width:200px;
+        width:240px;
         margin:-30px auto 0;
         font:21px arial;
         color:#fff;
@@ -305,13 +305,13 @@
   <b>Управление:</b><br /> Кабриолет «Z» <br /> Lancer «&#8594»;
   </div>
   <div class="column">
-  <span class="title">Кабриолет</span>
+  <span class="title">Кабриолет <span id="userone"></span></span>
   
   <p id="scorewhite">Очков - 0</p>
   </div>
   
   <div class="column">
-  <span class="title">Lancer X</span>
+  <span class="title">Lancer X <span id="usertwo"></span></span>
   <p id="scorered">Очков - 0</p>
   </div>
   
@@ -329,6 +329,10 @@
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
   alert('Зайтите с ПК! На мобильных устройствах не работает!');
   } else {}
+  
+  
+       
+       
     
   
        var sum = 0;
@@ -533,7 +537,8 @@
     
     
  
-    
+    userone.innerHTML = prompt('Введите имя водителя кабриолета', 'Пользователь');
+    usertwo.innerHTML = prompt('Введите имя водителя Лансера', 'Пользователь');
     
 
   </script>
