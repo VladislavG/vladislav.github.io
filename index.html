@@ -319,6 +319,7 @@
        var pobedared = 0;
        var gg = 0;
        
+       
        addEventListener("keyup", function(event) 
        {
         
@@ -353,16 +354,22 @@
        }
        }
   });
-  
-  
+   
+   var ggg = 0;
    addEventListener("keyup", function(event) {
       if (event.keyCode == 39)
       {
       sums = nums+5;
       nums= sums;
       
-       
-      
+      while(ggg < 1)
+       {
+       var audio = new Audio('autostart.mp3');
+       audio.play();
+       ggg = ggg+1;
+
+       }
+   
       
        document.getElementById("carwhite").style.left = nums +"px";
        
@@ -377,7 +384,7 @@
        sums = 0;
        num = 0;
        nums = 0;
-       gg =0;
+       ggg =0;
        }
        }
   });
